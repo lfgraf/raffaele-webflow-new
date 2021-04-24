@@ -1,0 +1,44 @@
+{
+  "-67f25b0f": {
+    "collection": "projects",
+    "query": {
+      "offset": 0,
+      "limit": 2
+    }
+  },
+  "5bc9382f": {
+    "collection": "projects",
+    "query": {
+      "offset": 2,
+      "limit": 2
+    }
+  },
+  "522ce4ec": {
+    "collection": "projects",
+    "query": {
+      "offset": 0,
+      "limit": 1,
+      "fields": [
+        {
+          "fieldPath": "_id",
+          "operatorName": "ne",
+          "value": "DYN_CONTEXT"
+        }
+      ]
+    }
+  },
+  "-3f4c09d3": {
+    "collection": "projects",
+    "query": {
+      "offset": 1,
+      "limit": 1,
+      "fields": [
+        {
+          "fieldPath": "_id",
+          "operatorName": "ne",
+          "value": "DYN_CONTEXT"
+        }
+      ]
+    }
+  }
+}

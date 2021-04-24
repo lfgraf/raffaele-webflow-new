@@ -1,0 +1,266 @@
+backend:
+  name: "git-gateway"
+  accept_roles:
+    - "admin"
+    - "editor"
+media_folder: "static/images"
+collections:
+  - name: "pages"
+    label: "Pages"
+    folder: "site/pages"
+    identifier_field: "title"
+    extension: "md"
+    create: false
+    delete: false
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+      - label: "Layout"
+        widget: "hidden"
+        name: "layout"
+        default: "{{slug}}.html"
+      - label: "Seo"
+        name: "seo"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+            required: false
+          - label: "Description"
+            name: "description"
+            widget: "string"
+            required: false
+          - label: "Open Graph Image"
+            name: "og:image"
+            widget: "image"
+            required: false
+            media_library:
+              config:
+                multiple: false
+          - label: "Twitter Card"
+            name: "twitter:card"
+            widget: "string"
+            default: "summary"
+            required: false
+          - label: "Twitter Site"
+            name: "twitter:site"
+            widget: "string"
+            required: false
+          - label: "Twitter Creator"
+            name: "twitter:creator"
+            widget: "string"
+            required: false
+          - label: "Additional HTML tags"
+            name: "additional_tags"
+            widget: "text"
+            required: false
+  - name: "projects"
+    label: "Projects"
+    folder: "site/projects"
+    create: true
+    identifier_field: "name"
+    extension: "md"
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - label: "Tags"
+        widget: "hidden"
+        name: "tags"
+        default: "projects"
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+      - label: "Layout"
+        widget: "hidden"
+        name: "layout"
+        default: "single-projects.html"
+      - label: "Seo"
+        name: "seo"
+        widget: "object"
+        collapsed: true
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+            required: false
+          - label: "Description"
+            name: "description"
+            widget: "string"
+            required: false
+          - label: "Open Graph Image"
+            name: "og:image"
+            widget: "image"
+            required: false
+            media_library:
+              config:
+                multiple: false
+          - label: "Twitter Card"
+            name: "twitter:card"
+            widget: "string"
+            default: "summary"
+            required: false
+          - label: "Twitter Site"
+            name: "twitter:site"
+            widget: "string"
+            required: false
+          - label: "Twitter Creator"
+            name: "twitter:creator"
+            widget: "string"
+            required: false
+          - label: "Additional HTML tags"
+            name: "additional_tags"
+            widget: "text"
+            required: false
+      - widget: "object"
+        name: "project-image"
+        label: "Immagine"
+        fields:
+          - widget: "image"
+            name: "url"
+            label: "Image"
+            allow_multiple: false
+            required: false
+          - widget: "string"
+            name: "alt"
+            label: "Alt Text"
+            required: false
+      - name: "background-color"
+        label: "Background Color"
+        widget: "color"
+        required: false
+      - name: "overview"
+        label: "Overview"
+        widget: "string"
+        required: false
+      - name: "project-title"
+        label: "Titolo"
+        widget: "string"
+        required: false
+      - widget: "object"
+        name: "new-image"
+        label: "New image"
+        fields:
+          - widget: "image"
+            name: "url"
+            label: "Image"
+            allow_multiple: false
+            required: false
+          - widget: "string"
+            name: "alt"
+            label: "Alt Text"
+            required: false
+      - name: "client-overview"
+        label: "Chi era coinvolto"
+        widget: "text"
+        required: false
+      - name: "problem-overview"
+        label: "Il Problema"
+        widget: "text"
+        required: false
+      - name: "solution-overview"
+        label: "La soluzione"
+        widget: "text"
+        required: false
+      - name: "result-overview"
+        label: "Come é stato risolto"
+        widget: "text"
+        required: false
+      - widget: "object"
+        name: "gallery-image-1"
+        label: "Gallery Image 1"
+        fields:
+          - widget: "image"
+            name: "url"
+            label: "Image"
+            allow_multiple: false
+            required: false
+          - widget: "string"
+            name: "alt"
+            label: "Alt Text"
+            required: false
+      - widget: "object"
+        name: "gallery-image-split-left"
+        label: "Gallery Image Split (Left)"
+        fields:
+          - widget: "image"
+            name: "url"
+            label: "Image"
+            allow_multiple: false
+            required: false
+          - widget: "string"
+            name: "alt"
+            label: "Alt Text"
+            required: false
+      - widget: "object"
+        name: "gallery-image-split-right"
+        label: "Gallery Image Split (Right)"
+        fields:
+          - widget: "image"
+            name: "url"
+            label: "Image"
+            allow_multiple: false
+            required: false
+          - widget: "string"
+            name: "alt"
+            label: "Alt Text"
+            required: false
+      - widget: "object"
+        name: "gallery-image-2"
+        label: "Gallery Image 2"
+        fields:
+          - widget: "image"
+            name: "url"
+            label: "Image"
+            allow_multiple: false
+            required: false
+          - widget: "string"
+            name: "alt"
+            label: "Alt Text"
+            required: false
+      - widget: "object"
+        name: "gallery-image-3"
+        label: "Gallery Image 3"
+        fields:
+          - widget: "image"
+            name: "url"
+            label: "Image"
+            allow_multiple: false
+            required: false
+          - widget: "string"
+            name: "alt"
+            label: "Alt Text"
+            required: false
+      - name: "general-content-title"
+        label: "Conclusione"
+        widget: "string"
+        required: false
+      - name: "general-overview"
+        label: "General Overview"
+        widget: "text"
+        required: false
+      - name: "name"
+        label: "Name"
+        widget: "string"
+        required: true
+      - name: "created-on"
+        label: "Created On"
+        widget: "datetime"
+        required: false
+      - name: "updated-on"
+        label: "Updated On"
+        widget: "datetime"
+        required: false
+      - name: "published-on"
+        label: "Published On"
+        widget: "datetime"
+        required: false
